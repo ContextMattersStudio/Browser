@@ -129,6 +129,7 @@ import acr.browser.lightning.reading.activity.ReadingActivity;
 import acr.browser.lightning.receiver.NetworkReceiver;
 import acr.browser.lightning.search.SearchEngineProvider;
 import acr.browser.lightning.search.SuggestionsAdapter;
+import acr.browser.lightning.search.engine.BaseSearchEngine;
 import acr.browser.lightning.settings.activity.SettingsActivity;
 import acr.browser.lightning.utils.DrawableUtils;
 import acr.browser.lightning.utils.IntentUtils;
@@ -293,7 +294,7 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
         AdRequest adRequest = new AdRequest.Builder().build();
         adView1.loadAd(adRequest);
 
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5561832559163543~4377820834");
+        /*MobileAds.initialize(getApplicationContext(), "ca-app-pub-5561832559163543~4377820834");
         AdView adView2 = (AdView) findViewById(R.id.ad_browser2);
         AdRequest adRequest2 = new AdRequest.Builder().build();
         adView2.loadAd(adRequest2);
@@ -306,7 +307,7 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-5561832559163543~4377820834");
         AdView adView4 = (AdView) findViewById(R.id.ad_browser4);
         //AdRequest adRequest2 = new AdRequest.Builder().build();
-        adView4.loadAd(adRequest2);
+        adView4.loadAd(adRequest2);*/
 
         mTabsManager = new TabsManager();
         //mPresenter = new BrowserPresenter(this, isIncognito());
@@ -771,8 +772,8 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
 
         setFullscreen(mPreferences.getHideStatusBarEnabled(), false);
 
-//        BaseSearchEngine currentSearchEngine = mSearchEngineProvider.getCurrentSearchEngine();
-//        mSearchText = currentSearchEngine.getQueryUrl();
+        BaseSearchEngine currentSearchEngine = mSearchEngineProvider.getCurrentSearchEngine();
+        mSearchText = currentSearchEngine.getQueryUrl();
 
         updateCookiePreference().subscribeOn(Schedulers.worker()).subscribe();
         mProxyUtils.updateProxySettings(this);

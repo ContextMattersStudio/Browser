@@ -34,7 +34,7 @@
                     android:id="@+id/relative_ads"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="-40dp"
+                    android:layout_marginTop="-70dp"
                     android:background="@color/gray_lighter"
                     android:gravity="center_horizontal">
 
@@ -46,13 +46,14 @@
                         ads:adSize="BANNER"
                         ads:adUnitId="ca-app-pub-5561832559163543/4950280878" />
 
-                    <com.google.android.gms.ads.AdView
+                    <!--<com.google.android.gms.ads.AdView
                         android:id="@+id/ad_browser2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/ad_browser1"
                         android:layout_marginTop="@dimen/distance_between_ads"
                         android:background="@color/gray_lighter"
+                        android:visibility="invisible"
                         ads:adSize="BANNER"
                         ads:adUnitId="ca-app-pub-5561832559163543/9795413443" />
 
@@ -63,6 +64,7 @@
                         android:layout_below="@+id/ad_browser2"
                         android:layout_marginTop="@dimen/distance_between_ads"
                         android:background="@color/gray_lighter"
+                        android:visibility="invisible"
                         ads:adSize="BANNER"
                         ads:adUnitId="ca-app-pub-5561832559163543/5272756643" />
 
@@ -73,8 +75,9 @@
                         android:layout_below="@+id/ad_browser3"
                         android:layout_marginTop="@dimen/distance_between_ads"
                         android:background="@color/gray_lighter"
+                        android:visibility="invisible"
                         ads:adSize="BANNER"
-                        ads:adUnitId="ca-app-pub-5561832559163543/4351515071" />
+                        ads:adUnitId="ca-app-pub-5561832559163543/4351515071" />-->
 
                 </RelativeLayout>
 
