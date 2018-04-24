@@ -14,6 +14,9 @@ import android.util.Log;
 import android.webkit.WebView;
 
 import com.anthonycr.bonsai.Schedulers;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.squareup.leakcanary.LeakCanary;
 
 import java.util.List;
@@ -115,6 +118,13 @@ public class BrowserApp extends MultiDexApplication {
                 MemoryLeakUtils.clearNextServedView(activity, BrowserApp.this);
             }
         });
+
+        //Analytics event
+        Tracker tracker = GoogleAnalytics.getInstance(this).newTracker(BuildConfig.ANALYTICS_ID);
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("AppLaunched")
+                .build());
     }
 
     @NonNull
